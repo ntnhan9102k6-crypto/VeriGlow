@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Blog làm đẹp VeriGlow - Cẩm nang tư vấn Skincare chuẩn khoa học, đánh giá sản phẩm chính hãng.">
+    
+    <title>Blog Làm Đẹp & Skincare Khoa Học | VeriGlow Cosmetics</title>
+
+    <!-- Thư viện CSS bên ngoài -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    
+    <!-- File CSS tùy chỉnh của dự án -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         1. PHẦN ĐẦU TRANG (HEADER & NAVIGATION)
+         ========================================== -->
+    <header>
+        <div class="topbar bg-pink-main text-white d-none d-md-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-start">
+                        <i class="fas fa-truck me-2"></i> Miễn phí vận chuyển toàn quốc cho đơn hàng từ 500.000đ
+                    </div>
+                    <div class="col-md-6 text-end d-flex justify-content-end align-items-center">
+                        <span class="me-3"><i class="fas fa-phone-alt me-1"></i> Hotline: 1900 1234</span>
+                        <a href="https://facebook.com" target="_blank" class="text-white text-decoration-none me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="text-white text-decoration-none me-3"><i class="fab fa-instagram"></i></a>
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-sm btn-outline-light dropdown-toggle border-0" type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                VN (VND)
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="langDropdown">
+                                <li><a class="dropdown-item" href="javascript:void(0)">EN (USD)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg sticky-top shadow-sm bg-white">
+            <div class="container">
+                <a class="navbar-brand text-pink-dark brand-font fs-3 fw-bold" href="index.html">
+                    <i class="fas fa-leaf text-pink-main me-2"></i>VeriGlow
+                </a>
+                
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Trang Chủ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="products.html">Sản Phẩm</a></li>
+                        <li class="nav-item"><a class="nav-link" href="compo.html">Combo Khuyến Mãi</a></li>
+                        <li class="nav-item"><a class="nav-link active text-pink-dark fw-bold" href="blog.html">Blog Làm Đẹp</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Về Chúng Tôi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Liên Hệ</a></li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-3">
+                        <a href="javascript:void(0)" class="text-dark fs-5" data-bs-toggle="modal" data-bs-target="#searchModal" title="Tìm kiếm">
+                            <i class="fas fa-search hover-pink"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="text-dark fs-5" data-bs-toggle="modal" data-bs-target="#loginModal" title="Tài khoản">
+                            <i class="far fa-user hover-pink"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="text-dark fs-5 position-relative" data-bs-toggle="modal" data-bs-target="#cartModal" title="Giỏ hàng">
+                            <i class="fas fa-shopping-bag text-pink-dark hover-pink"></i>
+                            <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem;">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==========================================
+         2. BANNER BREADCRUMB BLOG
+         ========================================== -->
+    <section class="py-5 text-center bg-pink-lightest border-bottom">
+        <div class="container">
+            <span class="text-pink-main text-uppercase fw-bold letter-spacing-1"><i class="fas fa-newspaper me-2"></i>Tư Vấn Chuyên Sâu</span>
+            <h1 class="brand-font text-pink-dark fw-bold display-5 my-2">Cẩm Nang Làm Đẹp Khoa Học</h1>
+            <p class="text-muted mb-3">Kiến thức Skincare thực tế, phân tích thành phần minh bạch và xu hướng chăm sóc da mới nhất.</p>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-muted">Trang Chủ</a></li>
+                    <li class="breadcrumb-item active text-pink-dark fw-bold" aria-current="page">Blog Làm Đẹp</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         3. BÀI VIẾT BỎNG MẮT BANNER NỔI BẬT
+         ========================================== -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5">
+                <div class="row g-0 align-items-center">
+                    <div class="col-lg-7">
+                        <img src="img/OIP (22).jpg" class="img-fluid w-100 h-100" style="object-fit: cover; min-height: 360px;" alt="Bí quyết Skincare">
+                    </div>
+                    <div class="col-lg-5 p-4 p-md-5">
+                        <span class="badge bg-pink-main text-white mb-2"><i class="fas fa-star me-1"></i> BÀI VIẾT HOT</span>
+                        <h2 class="brand-font fw-bold text-dark mb-3">Skincare Cho Người Mới Bắt Đầu: 4 Bước Tối Giản Nhưng Hiệu Quả</h2>
+                        <p class="text-muted mb-4">Bạn bối rối trước hàng nghìn sản phẩm mỹ phẩm? Hãy bắt đầu với quy trình 4 bước chuẩn da liễu giúp duy trì hàng rào bảo vệ da khỏe mạnh...</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <button class="btn btn-veriglow shadow" onclick="window.readBlog('skincare-coban')">Đọc Bài Viết <i class="fas fa-arrow-right ms-2"></i></button>
+                            <small class="text-muted"><i class="far fa-clock me-1"></i> 5 phút đọc</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lưới các bài viết Blog -->
+            <div class="row g-4">
+                <!-- Bài 1 -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
+                        <img src="img/image24.png" class="card-img-top" style="height: 220px; object-fit: cover;" alt="Da Dầu Mụn">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <span class="badge bg-pink-lightest text-pink-dark mb-2 align-self-start"><i class="fas fa-tag me-1"></i> Trị Mụn</span>
+                            <h5 class="card-title fw-bold brand-font fs-6 mb-3">Cách Chăm Sóc Da Dầu Mụn Đúng Cách Tại Nhà</h5>
+                            <p class="card-text text-muted small mb-4 flex-grow-1">Học cách làm sạch bã nhờn dịu nhẹ, kết hợp Salicylic Acid (BHA) và Niacinamide để giảm mụn bít tắc hiệu quả.</p>
+                            <button class="btn btn-outline-veriglow btn-sm rounded-pill align-self-start" onclick="window.readBlog('da-dau-mun')">Xem Chi Tiết</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bài 2 -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1000&auto=format&fit=crop" class="card-img-top" style="height: 220px; object-fit: cover;" alt="Da Nhạy Cảm">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <span class="badge bg-pink-lightest text-pink-dark mb-2 align-self-start"><i class="fas fa-tag me-1"></i> Da Nhạy Cảm</span>
+                            <h5 class="card-title fw-bold brand-font fs-6 mb-3">Bí Quyết Chọn Mỹ Phẩm An Toàn Cho Làn Da Nhạy Cảm</h5>
+                            <p class="card-text text-muted small mb-4 flex-grow-1">Bảng thành phần nên tránh và cách đọc nhãn dán mỹ phẩm minh bạch dành riêng cho da hay kích ứng, mẩn đỏ.</p>
+                            <button class="btn btn-outline-veriglow btn-sm rounded-pill align-self-start" onclick="window.readBlog('da-nhay-cam')">Xem Chi Tiết</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bài 3 -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
+                        <img src="img/Gemini_Generated_Image_b7goe0b7goe0b7go.png" class="card-img-top" style="height: 220px; object-fit: cover;" alt="Chống Nắng">
+                        <div class="card-body p-4 d-flex flex-column">
+                            <span class="badge bg-pink-lightest text-pink-dark mb-2 align-self-start"><i class="fas fa-tag me-1"></i> Chống Nắng</span>
+                            <h5 class="card-title fw-bold brand-font fs-6 mb-3">Hiểu Đúng Về Kem Chống Nắng Quang Phổ Rộng</h5>
+                            <p class="card-text text-muted small mb-4 flex-grow-1">Vì sao chỉ số SPF thôi là chưa đủ? Sự thật về tia UVA1, UVB và màng lọc chống nắng thế hệ mới.</p>
+                            <button class="btn btn-outline-veriglow btn-sm rounded-pill align-self-start" onclick="window.readBlog('chong-nang')">Xem Chi Tiết</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         4. FOOTER CHÂN TRANG
+         ========================================== -->
+    <footer class="bg-white border-top pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-3">
+                    <h4 class="brand-font text-pink-dark fw-bold mb-3"><i class="fas fa-leaf text-pink-main me-2"></i>VeriGlow</h4>
+                    <p class="text-muted small pe-lg-4">Uy tín tạo niềm tin, Minh bạch dựng vẻ đẹp. Hệ thống bán lẻ mỹ phẩm chính hãng hàng đầu, cung cấp giải pháp chăm sóc da an toàn và hiệu quả.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="https://facebook.com" target="_blank" class="text-pink-main fs-5"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="text-pink-main fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="text-pink-main fs-5"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold text-pink-dark text-uppercase mb-3">Về Chúng Tôi</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">Câu chuyện VeriGlow</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-muted text-decoration-none">Blog Làm Đẹp</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h6 class="fw-bold text-pink-dark text-uppercase mb-3">Hỗ Trợ Khách Hàng</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Chính sách đổi trả 7 ngày</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Chính sách bảo mật</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Hướng dẫn mua hàng</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h6 class="fw-bold text-pink-dark text-uppercase mb-3">Liên Hệ Trực Tiếp</h6>
+                    <p class="text-muted small mb-1"><i class="fas fa-map-marker-alt text-pink-main me-2"></i> 123 Nguyễn Đình Chiểu, Q.3, TP.HCM</p>
+                    <p class="text-muted small mb-1"><i class="fas fa-phone-alt text-pink-main me-2"></i> Hotline: 1900 1234</p>
+                    <p class="text-muted small mb-0"><i class="fas fa-envelope text-pink-main me-2"></i> support@veriglow.vn</p>
+                </div>
+            </div>
+            <div class="row mt-4 pt-3 border-top">
+                <div class="col-12 text-center text-muted small">
+                    <p class="mb-0">&copy; 2026 VeriGlow Cosmetics. Đã đăng ký Bản quyền.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         5. MODALS & TOAST
+         ========================================== -->
+    <!-- Modal Đọc Bài Viết Chi Tiết -->
+    <div class="modal fade" id="blogDetailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 shadow">
+                <div class="modal-header bg-pink-lightest border-0">
+                    <h5 class="modal-title fw-bold text-pink-dark brand-font" id="blog-title">Bài Viết Skincare</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4" id="blog-content">
+                    <!-- Nội dung tự động nạp -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Tìm Kiếm Toàn Trang -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 shadow">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold text-pink-dark"><i class="fas fa-search me-2"></i>Tìm Kiếm Sản Phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <form onsubmit="window.handleNavSearch(event)">
+                        <div class="input-group">
+                            <input type="text" id="nav-search-input" class="form-control form-control-lg border-pink-soft" placeholder="Nhập tên sản phẩm, thương hiệu (CeraVe, Cocoon...)..." required>
+                            <button class="btn btn-veriglow px-4" type="submit"><i class="fas fa-search"></i> Tìm</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Giỏ Hàng Đồng Bộ -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-right" style="margin: 0 0 0 auto; max-width: 420px; height: 100%;">
+            <div class="modal-content border-0 h-100 rounded-0">
+                <div class="modal-header bg-pink-lightest border-0 py-3">
+                    <h5 class="modal-title fw-bold brand-font text-pink-dark">
+                        <i class="fas fa-shopping-cart me-2"></i> Giỏ Hàng (<span id="cart-count-header">0</span>)
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body bg-white" id="cart-body">
+                    <p class="text-center text-muted my-5">Giỏ hàng của bạn đang trống.</p>
+                </div>
+                <div class="modal-footer flex-column bg-light border-0 p-3">
+                    <div class="d-flex justify-content-between w-100 mb-3">
+                        <span class="fw-bold fs-5">Tổng tiền:</span>
+                        <span class="fw-bold text-pink-dark fs-4" id="cart-total">0đ</span>
+                    </div>
+                    <button type="button" class="btn btn-veriglow w-100 py-3 fs-5 shadow" onclick="window.checkout()">TIẾN HÀNH THANH TOÁN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Đăng Nhập -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow rounded-4 p-4">
+                <div class="modal-header border-0 pb-0">
+                    <h4 class="modal-title fw-bold brand-font text-pink-dark">Đăng Nhập</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="event.preventDefault(); alert('Đăng nhập thành công!'); bootstrap.Modal.getInstance(document.getElementById('loginModal')).hide();">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small">Email / Số điện thoại</label>
+                            <input type="text" class="form-control" placeholder="Nhập email hoặc SĐT..." required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small">Mật khẩu</label>
+                            <input type="password" class="form-control" placeholder="Nhập mật khẩu..." required>
+                        </div>
+                        <button type="submit" class="btn btn-veriglow w-100 py-2 mt-2">ĐĂNG NHẬP</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Thông Báo -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1090;">
+        <div id="cartToast" class="toast align-items-center text-dark bg-white border-0 shadow" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body fw-bold">
+                    <i class="fas fa-check-circle text-success me-2 fs-5"></i> <span id="toast-msg">Đã thêm vào giỏ hàng!</span>
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Logic xem chi tiết bài viết Blog bằng Popup Modal
+        window.readBlog = function(type) {
+            const titleEl = document.getElementById('blog-title');
+            const contentEl = document.getElementById('blog-content');
+            
+            if (type === 'skincare-coban') {
+                titleEl.innerText = "Skincare Cho Người Mới Bắt Đầu: 4 Bước Tối Giản";
+                contentEl.innerHTML = `
+                    <p class="lead text-pink-dark fw-bold">Chu trình skincare cơ bản bao gồm 4 bước: Làm sạch -> Cân bằng -> Dưỡng ẩm -> Chống nắng.</p>
+                    <ol class="lh-lg">
+                        <li><strong>Làm sạch (Tẩy trang & Sữa rửa mặt):</strong> Loại bỏ bụi mịn, vi khuẩn và kem chống nắng trôi tích tụ sau 1 ngày làm việc.</li>
+                        <li><strong>Cân bằng da (Toner):</strong> Giúp lấy lại độ pH tự nhiên cho da, làm dịu và mở đường cho chất dưỡng thẩm thấu tốt hơn.</li>
+                        <li><strong>Dưỡng ẩm:</strong> Khóa ẩm, củng cố màng lipid ngăn hiện tượng mất nước qua da.</li>
+                        <li><strong>Chống nắng ban ngày:</strong> Bắt buộc dùng SPF từ 30+ trở lên để ngăn tia UV gây lão hóa sớm.</li>
+                    </ol>
+                    <div class="alert bg-pink-lightest border-pink-soft">
+                        <i class="fas fa-lightbulb text-pink-main me-2"></i><strong>Mẹo VeriGlow:</strong> Kiên trì thực hiện ít nhất 28 ngày để nhận thấy sự thay đổi rõ rệt trên làn da!
+                    </div>
+                `;
+            } else if (type === 'da-dau-mun') {
+                titleEl.innerText = "Chăm Sóc Da Dầu Mụn Chuẩn Y Khoa";
+                contentEl.innerHTML = `
+                    <p class="lead text-pink-dark fw-bold">Da dầu mụn cần sự chăm sóc dịu nhẹ, tránh chà xát mạnh gây vỡ ổ viêm.</p>
+                    <ul class="lh-lg">
+                        <li>Ưu tiên sữa rửa mặt có chứa <strong>Salicylic Acid (BHA)</strong> hoặc <strong>Kẽm PCA</strong> kiềm dầu.</li>
+                        <li>Không bỏ qua kem dưỡng ẩm: Sử dụng dạng gel/thạch mỏng nhẹ không chứa dầu (Oil-Free).</li>
+                        <li>Thoa kem chống nắng ráo mịn, không vệt trắng để tránh bít tắc lỗ chân lông.</li>
+                    </ul>
+                `;
+            } else {
+                titleEl.innerText = "Chăm Sóc Da Chuyên Sâu Cùng VeriGlow";
+                contentEl.innerHTML = `
+                    <p>Mỗi làn da đều có câu chuyện và nhu cầu riêng. Hãy nhắn tin trực tiếp với chuyên viên VeriGlow để được tư vấn routine cá nhân hóa hoàn toàn miễn phí!</p>
+                `;
+            }
+
+            const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('blogDetailModal'));
+            modal.show();
+        };
+    </script>
+</body>
+</html>

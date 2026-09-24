@@ -1,0 +1,327 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   VERIGLOW COSMETICS - MASTER STYLESHEET
+   Cấu trúc chuẩn theo hệ thống thiết kế VeriGlow
+   Slogan: "Uy tín tạo niềm tin, Minh bạch dựng vẻ đẹp"
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BIẾN TOÀN CỤC (CSS VARIABLES) & BẢNG MÀU
+   -------------------------------------------------------------------------- */
+:root {
+    /* Bảng màu hồng VeriGlow Palette */
+    --vg-pink-lightest: #fce4ec;
+    --vg-pink-light: #f8bbd0;
+    --vg-pink-soft: #ffb6c1;
+    --vg-pink-main: #f06292;
+    --vg-pink-dark: #d81b60;
+    --vg-gold: #ffb300;
+
+    /* Bảng màu trung tính */
+    --vg-text-main: #333333;
+    --vg-text-muted: #6c757d;
+    --vg-bg-body: #fcfcfc;
+    --vg-white: #ffffff;
+    --vg-border-color: #eaeaea;
+
+    /* Hiệu ứng chuyển động & Đổ bóng */
+    --vg-transition: all 0.3s ease;
+    --vg-shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.05);
+    --vg-shadow-md: 0 8px 20px rgba(240, 98, 146, 0.12);
+    --vg-shadow-lg: 0 12px 30px rgba(216, 27, 96, 0.18);
+}
+
+/* --------------------------------------------------------------------------
+   2. CÀI ĐẶT CƠ BẢN & TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--vg-text-main);
+    background-color: var(--vg-bg-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .brand-font {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--vg-text-main);
+    transition: var(--vg-transition);
+}
+
+a:hover {
+    color: var(--vg-pink-dark);
+}
+
+/* Thanh cuộn tùy chỉnh */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--vg-pink-lightest);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--vg-pink-soft);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--vg-pink-main);
+}
+
+/* --------------------------------------------------------------------------
+   3. UTILITY CLASSES (LỚP TIỆN ÍCH)
+   -------------------------------------------------------------------------- */
+.text-pink-main { color: var(--vg-pink-main) !important; }
+.text-pink-dark { color: var(--vg-pink-dark) !important; }
+.bg-pink-lightest { background-color: var(--vg-pink-lightest) !important; }
+.bg-pink-light { background-color: var(--vg-pink-light) !important; }
+.bg-pink-main { background-color: var(--vg-pink-main) !important; color: var(--vg-white); }
+.border-pink-soft { border-color: var(--vg-pink-soft) !important; }
+
+.transition { transition: var(--vg-transition); }
+.hover-shadow:hover { box-shadow: var(--vg-shadow-md); transform: translateY(-3px); }
+.hover-pink:hover { color: var(--vg-pink-dark) !important; }
+
+/* --------------------------------------------------------------------------
+   4. NÚT BẤM (BUTTONS)
+   -------------------------------------------------------------------------- */
+.btn-veriglow {
+    background-color: var(--vg-pink-main);
+    color: var(--vg-white) !important;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 30px;
+    border: none;
+    transition: var(--vg-transition);
+    box-shadow: 0 4px 10px rgba(240, 98, 146, 0.25);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-veriglow:hover {
+    background-color: var(--vg-pink-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(216, 27, 96, 0.35);
+}
+
+.btn-outline-veriglow {
+    border: 2px solid var(--vg-pink-main);
+    color: var(--vg-pink-dark);
+    background: transparent;
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 8px 20px;
+    transition: var(--vg-transition);
+}
+
+.btn-outline-veriglow:hover, 
+.btn-outline-veriglow.active {
+    background: var(--vg-pink-main);
+    color: var(--vg-white) !important;
+    border-color: var(--vg-pink-main);
+}
+
+/* --------------------------------------------------------------------------
+   5. NAVBAR & HEADER
+   -------------------------------------------------------------------------- */
+.topbar {
+    font-size: 0.85rem;
+    padding: 8px 0;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 14px 0;
+    transition: var(--vg-transition);
+}
+
+.nav-link {
+    font-weight: 700;
+    color: var(--vg-text-main);
+    margin: 0 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--vg-transition);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--vg-pink-dark);
+    transition: var(--vg-transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover, 
+.nav-link.active {
+    color: var(--vg-pink-dark) !important;
+}
+
+/* Badge trên giỏ hàng */
+#cart-badge {
+    font-size: 0.65rem;
+    padding: 0.35em 0.55em;
+}
+
+/* --------------------------------------------------------------------------
+   6. HERO CAROUSEL & FLOATING ANIMATIONS
+   -------------------------------------------------------------------------- */
+.hero-slider .carousel-item {
+    min-height: 480px;
+}
+
+.hero-img-floating {
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+/* --------------------------------------------------------------------------
+   7. THẺ SẢN PHẨM & COMBO (PRODUCT CARDS)
+   -------------------------------------------------------------------------- */
+.product-card {
+    transition: var(--vg-transition);
+    border: 1px solid var(--vg-pink-lightest);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--vg-shadow-md) !important;
+    border-color: var(--vg-pink-soft);
+}
+
+.product-card img {
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Ribbons & Badges */
+.ribbon-promo {
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    background: var(--vg-gold);
+    color: #fff;
+    padding: 4px 12px;
+    font-weight: 800;
+    font-size: 0.75rem;
+    border-radius: 15px 0 0 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 2;
+    text-transform: uppercase;
+}
+
+.ribbon-promo::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 0;
+    border-top: 8px solid #c58a00;
+    border-right: 8px solid transparent;
+}
+
+/* --------------------------------------------------------------------------
+   8. MODAL GIỎ HÀNG, TÌM KIẾM & CHI TIẾT
+   -------------------------------------------------------------------------- */
+/* Modal trượt bên phải cho giỏ hàng */
+.modal-dialog-right {
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    max-width: 420px;
+    height: 100%;
+    right: 0;
+    top: 0;
+}
+
+.modal-dialog-right .modal-content {
+    height: 100%;
+    border-radius: 0;
+}
+
+/* Modal Chi tiết */
+.detail-modal-header {
+    background: linear-gradient(135deg, var(--vg-pink-dark) 0%, var(--vg-pink-main) 100%);
+    color: var(--vg-white);
+}
+
+/* --------------------------------------------------------------------------
+   9. TOAST NOTIFICATION
+   -------------------------------------------------------------------------- */
+.toast-container {
+    z-index: 1090;
+}
+
+#cartToast {
+    border-left: 5px solid var(--vg-pink-main) !important;
+    border-radius: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   10. CHÂN TRANG (FOOTER)
+   -------------------------------------------------------------------------- */
+footer {
+    background-color: var(--vg-white);
+    line-height: 1.8;
+}
+
+footer a:hover {
+    color: var(--vg-pink-main) !important;
+    padding-left: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   11. RESPONSIVE (ĐIỀU CHỈNH TRÊN THIẾT BỊ DI ĐỘNG)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: var(--vg-white);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: var(--vg-shadow-md);
+        margin-top: 10px;
+    }
+    
+    .hero-slider .carousel-item {
+        min-height: auto;
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .modal-dialog-right {
+        max-width: 100%;
+    }
+    
+    .btn-veriglow {
+        padding: 8px 18px;
+        font-size: 0.85rem;
+    }
+}
